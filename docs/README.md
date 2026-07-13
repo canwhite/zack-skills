@@ -27,7 +27,7 @@ npx skills add https://github.com/canwhite/zack-skills -g
 ### Claude Code plugin
 
 ```bash
-/plugin marketplace add canwhite/zack-skills
+/plugin marketplace add zack-skills
 /plugin install zack-skills@zack-skills
 ```
 
