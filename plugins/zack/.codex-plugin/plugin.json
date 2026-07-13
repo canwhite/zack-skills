@@ -1,0 +1,30 @@
+{
+  "name": "harness",
+  "version": "1.9.0",
+  "description": "Engineering workflow skills for Codex.",
+  "author": {
+    "name": "Zack",
+    "email": "admin@example.com"
+  },
+  "homepage": "https://github.com/canwhite/zack-skills",
+  "repository": "https://github.com/canwhite/zack-skills",
+  "license": "MIT",
+  "keywords": [
+    "codex",
+    "skills"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Harness",
+    "shortDescription": "Engineering workflow skills for Codex",
+    "longDescription": "Harness packages engineering habits as Codex skills.",
+    "developerName": "Zack",
+    "category": "Developer Tools",
+    "capabilities": [
+      "Interactive",
+      "Write"
+    ],
+    "websiteURL": "https://github.com/canwhite/zack-skills",
+    "brandColor": "#111827"
+  }
+}

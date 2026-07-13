@@ -1,0 +1,15 @@
+{
+  "name": "zack-skills",
+  "skills": [
+    "./skills/engineering/check",
+    "./skills/engineering/diagnose",
+    "./skills/engineering/health",
+    "./skills/engineering/post-mortem",
+    "./skills/engineering/pre-mortem",
+    "./skills/engineering/rice",
+    "./skills/engineering/setup-zack-skills",
+    "./skills/engineering/zoom-out",
+    "./skills/productivity/caveman",
+    "./skills/productivity/markdown-to-itmz"
+  ]
+}

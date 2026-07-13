@@ -1,0 +1,32 @@
+{
+  "name": "@canwhite/zack-skills",
+  "version": "1.9.0",
+  "description": "Harness engineering skills for Claude Code.",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/canwhite/zack-skills.git"
+  },
+  "homepage": "https://github.com/canwhite/zack-skills#readme",
+  "keywords": [
+    "claude-code",
+    "skills",
+    "harness"
+  ],
+  "files": [
+    "README.md",
+    "skills",
+    "rules",
+    "scripts/check-update.sh",
+    "!**/__pycache__/**"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "pi": {
+    "skills": [
+      "./skills",
+      "!skills/RESOLVER.md"
+    ]
+  }
+}
