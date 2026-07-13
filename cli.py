@@ -117,12 +117,33 @@ def cmd_init(plugin_data):
     print(f"Initialized with {len(skills)} skills")
 
 
+def cmd_all(plugin_data):
+    """Add all missing skills to plugin.json (skips already-installed)."""
+    skills = load_skills()
+    current_skills = set(plugin_data.get("skills", []))
+    added = []
+    skipped = []
+    for s in skills:
+        skill_path = f"./skills/{s['category_path']}"
+        if skill_path in current_skills:
+            skipped.append(s["name"])
+        else:
+            current_skills.add(skill_path)
+            added.append(s["name"])
+    plugin_data["skills"] = sorted(current_skills)
+    save_plugin(plugin_data)
+    print(f"Added {len(added)} skill(s): {', '.join(added) if added else 'none'}")
+    if skipped:
+        print(f"Skipped {len(skipped)} already-installed: {', '.join(skipped)}")
+
+
 def main():
     parser = argparse.ArgumentParser(prog="zack-skills")
     sub = parser.add_subparsers(dest="cmd")
 
     sub.add_parser("list", help="List available skills")
     sub.add_parser("init", help="Initialize plugin.json with all skills")
+    sub.add_parser("all", help="Add all missing skills (skips already-installed)")
 
     add_p = sub.add_parser("add", help="Add a skill")
     add_p.add_argument("skill", help="Skill name to add")
@@ -147,6 +168,8 @@ def main():
         cmd_remove(args.skill, plugin_data)
     elif args.cmd == "init":
         cmd_init(plugin_data)
+    elif args.cmd == "all":
+        cmd_all(plugin_data)
 
 
 if __name__ == "__main__":

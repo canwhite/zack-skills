@@ -41,7 +41,8 @@ git clone https://github.com/canwhite/zack-skills.git
 cd zack-skills
 
 python3 cli.py list                  # List available skills
-python3 cli.py init                  # Initialize plugin.json with all skills
+python3 cli.py all                   # Add all missing skills (skips already-installed)
+python3 cli.py init                  # Initialize plugin.json with all skills (overwrites)
 python3 cli.py add <skill>           # Add a skill
 python3 cli.py remove <skill>        # Remove a skill
 ```
