@@ -2,7 +2,7 @@
 set -u
 SKILL="zack-skills"
 REPO="canwhite/zack-skills"
-LOCAL_VERSION="${LOCAL_VERSION:-v1.0.0}"
+LOCAL_VERSION="${LOCAL_VERSION:-v1.9.1}"
 REMOTE_URL="${WAZA_UPDATE_URL:-https://raw.githubusercontent.com/${REPO}/main/VERSION}"
 local_ver="$(printf '%s' "${LOCAL_VERSION}" | sed 's/^v//')"
 [ -n "${local_ver}" ] || exit 0

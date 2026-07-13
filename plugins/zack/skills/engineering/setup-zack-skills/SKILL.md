@@ -4,7 +4,7 @@ description: Sets up an `## Agent skills` block in AGENTS.md/CLAUDE.md and `docs
 disable-model-invocation: true
 ---
 
-# Setup Harness Skills
+# Setup Zack Skills
 
 Scaffold the per-repo configuration that the engineering skills assume:
 

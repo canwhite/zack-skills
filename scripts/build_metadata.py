@@ -26,9 +26,14 @@ AUTHOR_EMAIL = "admin@example.com"
 CLAUDE_MARKETPLACE_TOP = {
     "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
     "name": "zack-skills",
-    "description": "Zack engineering skills for Claude Code: check, health, pre-mortem, post-mortem, diagnose, zoom-out, rice, caveman, markdown-to-itmz, setup-zack-skills.",
     "owner": {"name": AUTHOR_NAME, "email": AUTHOR_EMAIL},
 }
+
+
+def build_marketplace_description(skills: list[dict]) -> str:
+    """Generate marketplace top-level description from current skill names."""
+    names = ", ".join(s["name"] for s in sorted(skills, key=lambda x: x["name"]))
+    return f"Zack engineering skills for Claude Code: {names}."
 
 CATEGORY = "development"
 CODEX_CATEGORY = "Developer Tools"
@@ -65,7 +70,8 @@ def build_marketplace(version: str, skills: list[dict]) -> dict:
     plugins = [{"name": "zack-skills", "description": "Full Zack skill toolkit.", "version": version, "category": CATEGORY, "source": "./", "homepage": HOMEPAGE}]
     for s in sorted(skills, key=lambda x: x["name"]):
         plugins.append({"name": f"zack-{s['name']}", "description": s["description"], "version": version, "category": CATEGORY, "source": f"./skills/{s['category_path']}", "homepage": HOMEPAGE, "skills": ["./"], "strict": False})
-    return {**CLAUDE_MARKETPLACE_TOP, "plugins": plugins}
+    top = {**CLAUDE_MARKETPLACE_TOP, "description": build_marketplace_description(skills)}
+    return {**top, "plugins": plugins}
 
 
 def build_codex_marketplace() -> dict:
@@ -135,7 +141,7 @@ def diff(label: str, expected: str, actual: str) -> str:
 def collect_skill_shared_assets(root: Path, check_update: str) -> dict[str, bytes]:
     generated: dict[str, bytes] = {}
     durable_bytes = (root / DURABLE_CONTEXT_RULE).read_bytes() if (root / DURABLE_CONTEXT_RULE).exists() else None
-    for skill_file in sorted((root / "skills").glob("*/SKILL.md")):
+    for skill_file in sorted((root / "skills").glob("**/SKILL.md")):
         skill_dir = skill_file.parent.relative_to(root)
         generated[(skill_dir / CHECK_UPDATE_SCRIPT).as_posix()] = check_update.encode()
         if DURABLE_CONTEXT_COPY.as_posix() in skill_file.read_text() and durable_bytes:
@@ -175,7 +181,6 @@ def main() -> int:
 
     check_script = root / CHECK_UPDATE_SCRIPT
     check_actual = check_script.read_text() if check_script.exists() else ""
-    waza_ref_re = re.compile(r'WAZA_REF="\$\{WAZA_REF:-(?:main|v\d+\.\d+\.\d+)\}"')
     local_ver_re = re.compile(r'LOCAL_VERSION="\$\{LOCAL_VERSION:-v\d+\.\d+\.\d+\}"')
     check_update = local_ver_re.sub(f'LOCAL_VERSION="${{LOCAL_VERSION:-v{version}}}"', check_actual)
 
@@ -233,7 +238,7 @@ def main() -> int:
         path.parent.mkdir(parents=True, exist_ok=True)
         path.write_bytes(content)
     print(f"wrote: plugins/zack/ ({len(codex_tree)} files)")
-    for skill_file in sorted((root / "skills").glob("*/SKILL.md")):
+    for skill_file in sorted((root / "skills").glob("**/SKILL.md")):
         skill_dir = skill_file.parent.relative_to(root)
         cu_path = skill_dir / CHECK_UPDATE_SCRIPT
         if cu_path.as_posix() in shared:

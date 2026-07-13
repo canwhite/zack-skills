@@ -1,11 +1,11 @@
 {
   "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
   "name": "zack-skills",
-  "description": "Zack engineering skills for Claude Code: check, health, pre-mortem, post-mortem, diagnose, zoom-out, rice, caveman, markdown-to-itmz, setup-zack-skills.",
   "owner": {
     "name": "Zack",
     "email": "admin@example.com"
   },
+  "description": "Zack engineering skills for Claude Code: caveman, check, diagnose, health, markdown-to-itmz, post-mortem, pre-mortem, rice, setup-zack-skills, zoom-out.",
   "plugins": [
     {
       "name": "zack-skills",
