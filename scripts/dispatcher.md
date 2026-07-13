@@ -23,9 +23,8 @@
 | Intent | Skill | File |
 |--------|-------|------|
 |  | caveman | `skills/productivity/caveman/SKILL.md` |
-| Code review, before merge, release gates, safety sinks, project-wide audit scorecard | check | `skills/engineering/check/SKILL.md` |
 |  | diagnose | `skills/engineering/diagnose/SKILL.md` |
-| Agent configuration audit, instruction drift detection, hooks/MCP verification, AI maintainability scorecard | health | `skills/engineering/health/SKILL.md` |
+| Find refactor opportunities that turn shallow modules into deep ones; report candidates with files, problem, solution, benefits; ask user which to explore before proposing interfaces. | improve-architecture | `skills/engineering/improve-architecture/SKILL.md` |
 |  | markdown-to-itmz | `skills/productivity/markdown-to-itmz/SKILL.md` |
 |  | post-mortem | `skills/engineering/post-mortem/SKILL.md` |
 |  | pre-mortem | `skills/engineering/pre-mortem/SKILL.md` |

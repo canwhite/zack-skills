@@ -105,7 +105,7 @@ def render_root_readme(skills: list[dict]) -> str:
     return (
         "# Zack Skills\n"
         "\n"
-        "A toolkit of engineering workflow skills for Claude Code: code review, agent health audits, pre-mortem, post-mortem, diagnose, zoom-out, caveman compression, RICE prioritization, and markdown-to-mind-map. Each skill is a Markdown workflow with frontmatter-driven dispatch; one `VERSION` file is the single source of truth for all generated artifacts (marketplace metadata, npm package, Codex mirror, dispatcher table, per-skill update check).\n"
+        "A toolkit of engineering workflow skills for Claude Code: pre-mortem, post-mortem, diagnose, zoom-out, caveman compression, RICE prioritization, and markdown-to-mind-map. Each skill is a Markdown workflow with frontmatter-driven dispatch; one `VERSION` file is the single source of truth for all generated artifacts (marketplace metadata, npm package, Codex mirror, dispatcher table, per-skill update check).\n"
         "\n"
         "## Skills\n"
         "\n"

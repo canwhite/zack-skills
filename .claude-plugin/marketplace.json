@@ -5,7 +5,7 @@
     "name": "Zack",
     "email": "admin@example.com"
   },
-  "description": "Zack engineering skills for Claude Code: caveman, check, diagnose, health, markdown-to-itmz, post-mortem, pre-mortem, rice, setup-zack-skills, zoom-out.",
+  "description": "Zack engineering skills for Claude Code: caveman, diagnose, improve-architecture, markdown-to-itmz, post-mortem, pre-mortem, rice, setup-zack-skills, zoom-out.",
   "plugins": [
     {
       "name": "zack-skills",
@@ -28,18 +28,6 @@
       "strict": false
     },
     {
-      "name": "zack-check",
-      "description": "Reviews code diffs, PRs, commits, and project audits. Use when the user asks for code review, pre-merge checks, issue triage, or project quality scoring. Not for debugging runtime errors or planning new features.",
-      "version": "1.9.1",
-      "category": "development",
-      "source": "./skills/engineering/check",
-      "homepage": "https://github.com/canwhite/zack-skills",
-      "skills": [
-        "./"
-      ],
-      "strict": false
-    },
-    {
       "name": "zack-diagnose",
       "description": "Disciplined diagnosis loop for hard bugs and performance regressions. Reproduce → minimise → hypothesise → instrument → fix → regression-test. Use when user says \"diagnose this\" / \"debug this\", reports a bug, says something is broken/throwing/failing, or describes a performance regression.",
       "version": "1.9.1",
@@ -52,11 +40,11 @@
       "strict": false
     },
     {
-      "name": "zack-health",
-      "description": "Runs an engineering health audit for instruction drift, hooks, MCP tool drift, and AI maintainability. Use when the user asks to audit agent configuration, check CLAUDE.md drift, verify hooks, or assess project health.",
+      "name": "zack-improve-architecture",
+      "description": "Find deepening opportunities in a codebase, informed by the domain language in CONTEXT.md and the decisions in docs/adr/. Use when the user wants to improve architecture, find refactoring opportunities, consolidate tightly-coupled modules, or make a codebase more testable and AI-navigable.",
       "version": "1.9.1",
       "category": "development",
-      "source": "./skills/engineering/health",
+      "source": "./skills/engineering/improve-architecture",
       "homepage": "https://github.com/canwhite/zack-skills",
       "skills": [
         "./"
@@ -113,7 +101,7 @@
     },
     {
       "name": "zack-setup-zack-skills",
-      "description": "Sets up an `## Agent skills` block in AGENTS.md/CLAUDE.md and `docs/agents/` so the engineering skills know this repo's issue tracker (GitHub or local markdown), triage label vocabulary, and domain doc layout. Run before first use of `to-issues`, `to-prd`, `triage`, `diagnose`, `tdd`, `improve-codebase-architecture`, or `zoom-out` — or if those skills appear to be missing context about the issue tracker, triage labels, or domain docs.",
+      "description": "Sets up an `## Agent skills` block in AGENTS.md/CLAUDE.md and `docs/agents/` so the engineering skills know this repo's issue tracker (GitHub or local markdown), triage label vocabulary, and domain doc layout. Run before first use of `to-issues`, `to-prd`, `triage`, `diagnose`, `tdd`, `improve-architecture`, or `zoom-out` — or if those skills appear to be missing context about the issue tracker, triage labels, or domain docs.",
       "version": "1.9.1",
       "category": "development",
       "source": "./skills/engineering/setup-zack-skills",

@@ -38,7 +38,7 @@ Establish a mental model before digging in. This saves time and prevents missing
 5. **Apply domain vocabulary** — use the project's glossary terms
 6. **Check ADRs** — respect documented architectural decisions
 
-**Deletion Test** (from `/improve-codebase-architecture`): If deleting a module makes complexity vanish, it was a pass-through — suspicious. If complexity reappears across N callers, it was earning its keep.
+**Deletion Test** (from `/improve-architecture`): If deleting a module makes complexity vanish, it was a pass-through — suspicious. If complexity reappears across N callers, it was earning its keep.
 
 **Deliverable**: A brief map comment confirming your understanding. Proceed only when you have a clear picture.
 
@@ -107,7 +107,7 @@ Remove debug instrumentation. State the correct hypothesis in commit/PR.
 - [ ] Memory leaks (growing caches, unclosed resources)
 - [ ] Unnecessary recomputation
 
-#### 3.6 Architecture (from `/improve-codebase-architecture`)
+#### 3.6 Architecture (from `/improve-architecture`)
 - [ ] Deletion test: pass-through modules?
 - [ ] Shallow modules: interface ≈ implementation complexity?
 - [ ] Tight coupling across seams?

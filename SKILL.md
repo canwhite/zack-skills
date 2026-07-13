@@ -1,7 +1,7 @@
 ---
 name: zack-skills
-description: "Engineering skill toolkit for Claude Code: code review, pre/post-mortem, diagnose, zoom-out, caveman compression, RICE prioritization, mind map. Invoked as /zack-skills or by skill name."
-when_to_use: "review, code review, pre-merge, project audit, health check, CLAUDE.md drift, diagnose, debug, explore architecture, caveman, rice, mind map"
+description: "Engineering skill toolkit for Claude Code: pre/post-mortem, diagnose, zoom-out, caveman compression, RICE prioritization, mind map. Invoked as /zack-skills or by skill name."
+when_to_use: "diagnose, debug, explore architecture, caveman, rice, mind map, pre-mortem, post-mortem"
 dispatch_intent: "Code review, pre-mortem planning, post-mortem analysis, bug diagnosis, codebase exploration, compressed communication, task prioritization, markdown to mind map"
 ---
 
@@ -12,22 +12,6 @@ dispatch_intent: "Code review, pre-mortem planning, post-mortem analysis, bug di
 ## Available Skills
 
 All skills live under the `skills/` subdirectory. Invoke by name.
-
-### /check
-
-Code review for diffs, PRs, commits, and project audits.
-
-- **Entry**: `skills/engineering/check/SKILL.md`
-- **Triggers**: review, code review, pre-merge, PR review, diff review, project audit, 合并前, 代码审查
-- **Covers**: type safety, error handling, JSDoc, security, performance
-
-### /health
-
-Agent health audit for configuration drift and AI maintainability.
-
-- **Entry**: `skills/engineering/health/SKILL.md`
-- **Triggers**: health, 体检, audit, agent audit, CLAUDE.md drift, hooks, MCP, AI maintainability
-- **Covers**: CLAUDE.md drift, hooks validity, MCP tool availability, memory system, context completeness
 
 ### /caveman
 
@@ -89,10 +73,6 @@ First-time repo setup: wires issue tracker, triage labels, and domain doc layout
 
 | Trigger | Skill |
 |---------|-------|
-| Code review, PR review, merge gate | `skills/engineering/check/SKILL.md` |
-| Project audit, quality scorecard | `skills/engineering/check/SKILL.md` |
-| Agent config audit, CLAUDE.md drift | `skills/engineering/health/SKILL.md` |
-| Hooks/MCP check | `skills/engineering/health/SKILL.md` |
 | Caveman/compressed communication | `skills/productivity/caveman/SKILL.md` |
 | Bug diagnosis/debug | `skills/engineering/diagnose/SKILL.md` |
 | Post-mortem/review completed work | `skills/engineering/post-mortem/SKILL.md` |

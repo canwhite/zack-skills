@@ -14,8 +14,6 @@
 
 | 分类 | Skill | 用途 |
 |---|---|---|
-| `engineering/` | `check` | 代码审查 (diff / PR / commit / 项目质量打分) |
-| `engineering/` | `health` | Agent 配置漂移审计 (CLAUDE.md / hooks / MCP / AI 可维护性) |
 | `engineering/` | `diagnose` | 调试诊断循环:reproduce → minimise → hypothesise → instrument → fix → regression-test |
 | `engineering/` | `post-mortem` | 复盘已完成工作,查找逻辑错误与实现漏洞 |
 | `engineering/` | `pre-mortem` | 想象灾难性失败,反向推导风险与缓解 |

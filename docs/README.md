@@ -1,13 +1,11 @@
 # Zack Skills
 
-Engineering skills for Claude Code: code review, agent health audits, pre-mortem, post-mortem, diagnose, zoom-out, and caveman compression.
+Engineering skills for Claude Code: pre-mortem, post-mortem, diagnose, zoom-out, caveman compression, RICE prioritization, and markdown-to-mind-map.
 
 ## Skills
 
 | Skill | When | What it does |
 | :--- | :--- | :--- |
-| `/check` | After a task, before merging | Reviews diffs, checks type safety, error handling, JSDoc, and project quality. |
-| `/health` | Auditing agent configuration | Checks CLAUDE.md drift, hooks, MCP tools, and AI maintainability. |
 | `pre-mortem` | Before starting | Anticipate failures and plan mitigations. |
 | `post-mortem` | After completing work | Review work, find logic errors and gaps. |
 | `diagnose` | When something is broken | Reproduce → minimise → hypothesise → instrument → fix → regression-test. |

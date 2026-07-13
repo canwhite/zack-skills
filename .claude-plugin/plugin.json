@@ -1,9 +1,8 @@
 {
   "name": "zack-skills",
   "skills": [
-    "./skills/engineering/check",
     "./skills/engineering/diagnose",
-    "./skills/engineering/health",
+    "./skills/engineering/improve-architecture",
     "./skills/engineering/post-mortem",
     "./skills/engineering/pre-mortem",
     "./skills/engineering/rice",
