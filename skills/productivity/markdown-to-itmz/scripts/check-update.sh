@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 set -u
-SKILL="harness"
+SKILL="zack-skills"
 REPO="canwhite/zack-skills"
 LOCAL_VERSION="${LOCAL_VERSION:-v1.0.0}"
 REMOTE_URL="${WAZA_UPDATE_URL:-https://raw.githubusercontent.com/${REPO}/main/VERSION}"
@@ -19,5 +19,5 @@ remote_ver="$(curl -fsSL --max-time 3 "${REMOTE_URL}" 2>/dev/null | tr -d '[:spa
 [ "${remote_ver}" = "${local_ver}" ] && exit 0
 highest="$(printf '%s\n%s\n' "${local_ver}" "${remote_ver}" | sort -V 2>/dev/null | tail -1)"
 [ "${highest}" = "${remote_ver}" ] || exit 0
-echo "Harness ${remote_ver} is available (you have ${local_ver}). Update: npx skills update -g"
+echo "Zack ${remote_ver} is available (you have ${local_ver}). Update: npx skills update -g"
 exit 0

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Validate Harness skill metadata and references."""
+"""Validate Zack skill metadata and references."""
 
 from __future__ import annotations
 

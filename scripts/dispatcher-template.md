@@ -1,6 +1,6 @@
-# Harness Skills Dispatcher
+# Zack Skills Dispatcher
 
-🥷 Harness — engineering skill toolkit for Claude Code.
+🥷 Zack — engineering skill toolkit for Claude Code.
 
 ## Available Skills
 
@@ -15,6 +15,7 @@
 | caveman | Ultra-compressed communication mode |
 | markdown-to-itmz | Convert Markdown to iThoughts mind map |
 | rice | RICE prioritization for scoring and ranking tasks |
+| setup-zack-skills | First-time repo setup: wires issue tracker, triage labels, and domain docs into AGENTS.md |
 
 ## Routing Table
 

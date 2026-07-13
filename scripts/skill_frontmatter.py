@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Frontmatter parser for Harness skill files."""
+"""Frontmatter parser for Zack skill files."""
 
 from __future__ import annotations
 

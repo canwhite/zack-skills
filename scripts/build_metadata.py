@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Generate Harness distribution metadata from VERSION + SKILL.md frontmatter."""
+"""Generate Zack distribution metadata from VERSION + SKILL.md frontmatter."""
 
 from __future__ import annotations
 
@@ -26,7 +26,7 @@ AUTHOR_EMAIL = "admin@example.com"
 CLAUDE_MARKETPLACE_TOP = {
     "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
     "name": "zack-skills",
-    "description": "Harness engineering skills for Claude Code: check, health, pre-mortem, post-mortem, diagnose, zoom-out, caveman.",
+    "description": "Zack engineering skills for Claude Code: check, health, pre-mortem, post-mortem, diagnose, zoom-out, rice, caveman, markdown-to-itmz, setup-zack-skills.",
     "owner": {"name": AUTHOR_NAME, "email": AUTHOR_EMAIL},
 }
 
@@ -83,7 +83,7 @@ ROUTING_TABLE_END = "<!-- routing-table:end -->"
 def render_dispatcher(template: str, skills: list[dict]) -> str:
     rows = ["| Intent | Skill | File |", "|--------|-------|------|"]
     for s in sorted(skills, key=lambda x: x["name"]):
-        rows.append(f"| {s.get('dispatch_intent','')} | {s['name']} | `skills/{s['name']}/SKILL.md` |")
+        rows.append(f"| {s.get('dispatch_intent','')} | {s['name']} | `skills/{s['category_path']}/SKILL.md` |")
     block = f"{ROUTING_TABLE_START}\n{chr(10).join(rows)}\n{ROUTING_TABLE_END}"
     pat = re.compile(re.escape(ROUTING_TABLE_START) + r".*?" + re.escape(ROUTING_TABLE_END), re.DOTALL)
     return pat.sub(block, template)
@@ -141,7 +141,7 @@ def main() -> int:
     check_update = local_ver_re.sub(f'LOCAL_VERSION="${{LOCAL_VERSION:-v{version}}}"', check_actual)
 
     shared = collect_skill_shared_assets(root, check_update)
-    codex_plugin_json = json.dumps({"name": "harness", "version": version, "description": "Engineering workflow skills for Codex.", "author": {"name": AUTHOR_NAME, "email": AUTHOR_EMAIL}, "homepage": HOMEPAGE, "repository": HOMEPAGE, "license": "MIT", "keywords": ["codex", "skills"], "skills": "./skills/", "interface": {"displayName": "Harness", "shortDescription": "Engineering workflow skills for Codex", "longDescription": "Harness packages engineering habits as Codex skills.", "developerName": AUTHOR_NAME, "category": CODEX_CATEGORY, "capabilities": ["Interactive", "Write"], "websiteURL": HOMEPAGE, "brandColor": "#111827"}}, indent=2, ensure_ascii=False) + "\n"
+    codex_plugin_json = json.dumps({"name": "zack-skills", "version": version, "description": "Engineering workflow skills for Codex.", "author": {"name": AUTHOR_NAME, "email": AUTHOR_EMAIL}, "homepage": HOMEPAGE, "repository": HOMEPAGE, "license": "MIT", "keywords": ["codex", "skills"], "skills": "./skills/", "interface": {"displayName": "Zack", "shortDescription": "Engineering workflow skills for Codex", "longDescription": "Zack packages engineering habits as Codex skills.", "developerName": AUTHOR_NAME, "category": CODEX_CATEGORY, "capabilities": ["Interactive", "Write"], "websiteURL": HOMEPAGE, "brandColor": "#111827"}}, indent=2, ensure_ascii=False) + "\n"
     codex_tree = collect_codex_plugin_tree(root, codex_plugin_json, shared)
 
     dispatcher_template = root / "scripts" / "dispatcher-template.md"
@@ -185,7 +185,6 @@ def main() -> int:
     print(f"wrote: .agents/plugins/marketplace.json")
     (root / "package.json").write_text(package_json)
     print(f"wrote: package.json (v{version})")
-    shutil.rmtree(root / "plugins" / "harness", ignore_errors=True)
     for rel, content in codex_tree.items():
         path = root / rel
         path.parent.mkdir(parents=True, exist_ok=True)

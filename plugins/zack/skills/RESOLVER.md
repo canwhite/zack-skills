@@ -1,4 +1,4 @@
-# Harness Skill Resolver
+# Zack Skill Resolver
 
 ## Shared Output Marker
 
@@ -8,16 +8,17 @@ All skills prefix the first line inline with `🥷`, not as its own paragraph.
 
 | Trigger | Skill |
 |---------|-------|
-| Code review / PR review / diff review / "review this" / "check this code" / merge gate / pre-merge | `skills/check/SKILL.md` |
-| Project audit / scorecard / quality check / health check | `skills/check/SKILL.md` |
-| Audit agent config / CLAUDE.md drift / hooks / MCP / instruction drift / AI maintainability | `skills/health/SKILL.md` |
-| Pre-mortem / anticipate failures / risk planning | `skills/pre-mortem/SKILL.md` |
-| Post-mortem / review completed work / find errors | `skills/post-mortem/SKILL.md` |
-| Diagnose / debug / reproduce root cause | `skills/diagnose/SKILL.md` |
-| Zoom-out / explore codebase / architecture | `skills/zoom-out/SKILL.md` |
-| Caveman / compressed communication / brief | `skills/caveman/SKILL.md` |
-| markdown-to-itmz / convert markdown to mind map | `skills/markdown-to-itmz/SKILL.md` |
-| rice / RICE prioritization / score tasks | `skills/rice/SKILL.md` |
+| Code review / PR review / diff review / "review this" / "check this code" / merge gate / pre-merge | `skills/engineering/check/SKILL.md` |
+| Project audit / scorecard / quality check / health check | `skills/engineering/check/SKILL.md` |
+| Audit agent config / CLAUDE.md drift / hooks / MCP / instruction drift / AI maintainability | `skills/engineering/health/SKILL.md` |
+| Pre-mortem / anticipate failures / risk planning | `skills/engineering/pre-mortem/SKILL.md` |
+| Post-mortem / review completed work / find errors | `skills/engineering/post-mortem/SKILL.md` |
+| Diagnose / debug / reproduce root cause | `skills/engineering/diagnose/SKILL.md` |
+| Zoom-out / explore codebase / architecture | `skills/engineering/zoom-out/SKILL.md` |
+| Caveman / compressed communication / brief | `skills/productivity/caveman/SKILL.md` |
+| markdown-to-itmz / convert markdown to mind map | `skills/productivity/markdown-to-itmz/SKILL.md` |
+| rice / RICE prioritization / score tasks | `skills/engineering/rice/SKILL.md` |
+| Bootstrap / first-run / setup issue tracker and triage labels | `skills/engineering/setup-zack-skills/SKILL.md` |
 
 ## Disambiguation
 
@@ -28,6 +29,7 @@ All skills prefix the first line inline with `🥷`, not as its own paragraph.
 
 ## Chaining
 
+- `/setup-zack-skills` (once) → other skills gain repo context
 - `/check` review done → user decides next step
 - `/health` audit done → user decides fix → re-run `/health` to verify
 - `/diagnose` done → fix → `/check` to verify

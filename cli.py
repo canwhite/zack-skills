@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Harness Skills CLI - Manage your skill toolkit."""
+"""Zack Skills CLI - Manage your skill toolkit."""
 
 from __future__ import annotations
 
@@ -49,7 +49,7 @@ def save_plugin(data):
 def cmd_list(skills, plugin_data):
     """List available and installed skills."""
     installed = set(plugin_data.get("skills", []))
-    print("\n Available skills\n Install once, then say 'Use harness-…' in your agent\n")
+    print("\n Available skills\n Install once, then say 'Use zack-…' in your agent\n")
     for s in skills:
         name = s["name"]
         desc = s["description"].split(". Use when")[0] if s["description"] else ""

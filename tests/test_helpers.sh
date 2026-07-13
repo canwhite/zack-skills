@@ -2,7 +2,7 @@
 set -euo pipefail
 
 make_tmpdir() {
-    mktemp -d "${TMPDIR:-/tmp}/harness-test.XXXXXX"
+    mktemp -d "${TMPDIR:-/tmp}/zack-test.XXXXXX"
 }
 
 copy_repo() {

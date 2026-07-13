@@ -1,5 +1,5 @@
 {
-  "name": "harness",
+  "name": "zack-skills",
   "version": "1.9.1",
   "description": "Engineering workflow skills for Codex.",
   "author": {
@@ -15,9 +15,9 @@
   ],
   "skills": "./skills/",
   "interface": {
-    "displayName": "Harness",
+    "displayName": "Zack",
     "shortDescription": "Engineering workflow skills for Codex",
-    "longDescription": "Harness packages engineering habits as Codex skills.",
+    "longDescription": "Zack packages engineering habits as Codex skills.",
     "developerName": "Zack",
     "category": "Developer Tools",
     "capabilities": [

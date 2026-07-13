@@ -50,7 +50,7 @@ make verify-generated  # 检测元数据是否和 SKILL.md 同步
 ```
 .claude-plugin/marketplace.json   — Claude Code 插件市场元数据
 .agents/plugins/marketplace.json  — Codex 插件市场元数据
-plugins/harness/                  — Codex 插件镜像（skills + rules）
+plugins/zack/                    — Codex 插件镜像（skills + rules）
 package.json                      — npm/Pi 包元数据
 scripts/dispatcher.md             — 路由表（从 SKILL.md frontmatter 生成）
 skills/*/scripts/check-update.sh — 各技能的更新检查脚本
