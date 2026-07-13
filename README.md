@@ -1,6 +1,6 @@
 # Zack Skills
 
-Engineering skills for Claude Code: code review, agent health audits, pre-mortem, post-mortem, diagnose, zoom-out, caveman compression, RICE prioritization, and markdown to mind map.
+A toolkit of engineering workflow skills for Claude Code: code review, agent health audits, pre-mortem, post-mortem, diagnose, zoom-out, caveman compression, RICE prioritization, and markdown-to-mind-map. Each skill is a Markdown workflow with frontmatter-driven dispatch; one `VERSION` file is the single source of truth for all generated artifacts (marketplace metadata, npm package, Codex mirror, dispatcher table, per-skill update check).
 
 ## Skills
 
@@ -37,3 +37,17 @@ npx skills add https://github.com/canwhite/zack-skills -g
 ```bash
 rm -rf ~/.claude/skills/zack-skills
 ```
+
+## Development
+
+```bash
+make test              # verify frontmatter + scripts + drift
+make regenerate        # rebuild all generated artifacts
+make verify-generated  # CI: fail if generated files drift from source
+```
+
+See [`docs/zoom-out.md`](docs/zoom-out.md) for the architecture reference (modules, dispatch flow, packaging model).
+
+## License
+
+MIT

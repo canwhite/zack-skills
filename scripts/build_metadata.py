@@ -105,7 +105,7 @@ def render_root_readme(skills: list[dict]) -> str:
     return (
         "# Zack Skills\n"
         "\n"
-        "Engineering skills for Claude Code: code review, agent health audits, pre-mortem, post-mortem, diagnose, zoom-out, caveman compression, RICE prioritization, and markdown to mind map.\n"
+        "A toolkit of engineering workflow skills for Claude Code: code review, agent health audits, pre-mortem, post-mortem, diagnose, zoom-out, caveman compression, RICE prioritization, and markdown-to-mind-map. Each skill is a Markdown workflow with frontmatter-driven dispatch; one `VERSION` file is the single source of truth for all generated artifacts (marketplace metadata, npm package, Codex mirror, dispatcher table, per-skill update check).\n"
         "\n"
         "## Skills\n"
         "\n"
@@ -131,6 +131,20 @@ def render_root_readme(skills: list[dict]) -> str:
         "```bash\n"
         "rm -rf ~/.claude/skills/zack-skills\n"
         "```\n"
+        "\n"
+        "## Development\n"
+        "\n"
+        "```bash\n"
+        "make test              # verify frontmatter + scripts + drift\n"
+        "make regenerate        # rebuild all generated artifacts\n"
+        "make verify-generated  # CI: fail if generated files drift from source\n"
+        "```\n"
+        "\n"
+        "See [`docs/zoom-out.md`](docs/zoom-out.md) for the architecture reference (modules, dispatch flow, packaging model).\n"
+        "\n"
+        "## License\n"
+        "\n"
+        "MIT\n"
     )
 
 
