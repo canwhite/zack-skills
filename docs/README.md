@@ -1,4 +1,4 @@
-# Harness Skills
+# Zack Skills
 
 Engineering skills for Claude Code: code review, agent health audits, pre-mortem, post-mortem, diagnose, zoom-out, and caveman compression.
 
@@ -28,7 +28,7 @@ npx skills add https://github.com/canwhite/zack-skills -g
 
 ```bash
 /plugin marketplace add canwhite/zack-skills
-/plugin install harness@zack-skills
+/plugin install zack-skills@zack-skills
 ```
 
 ## Uninstall

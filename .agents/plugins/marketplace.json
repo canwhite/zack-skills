@@ -1,11 +1,11 @@
 {
-  "name": "harness",
+  "name": "zack-skills",
   "interface": {
-    "displayName": "Harness"
+    "displayName": "Zack"
   },
   "plugins": [
     {
-      "name": "harness",
+      "name": "zack-skills",
       "source": {
         "source": "local",
         "path": "./plugins/zack"

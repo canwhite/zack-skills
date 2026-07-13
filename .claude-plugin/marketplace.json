@@ -8,8 +8,8 @@
   },
   "plugins": [
     {
-      "name": "harness",
-      "description": "Full Harness skill toolkit.",
+      "name": "zack-skills",
+      "description": "Full Zack skill toolkit.",
       "version": "1.9.0",
       "category": "development",
       "source": "./",

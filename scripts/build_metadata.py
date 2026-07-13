@@ -62,18 +62,18 @@ def collect_skill_metadata(root: Path):
 
 
 def build_marketplace(version: str, skills: list[dict]) -> dict:
-    plugins = [{"name": "harness", "description": "Full Harness skill toolkit.", "version": version, "category": CATEGORY, "source": "./", "homepage": HOMEPAGE}]
+    plugins = [{"name": "zack-skills", "description": "Full Zack skill toolkit.", "version": version, "category": CATEGORY, "source": "./", "homepage": HOMEPAGE}]
     for s in sorted(skills, key=lambda x: x["name"]):
         plugins.append({"name": f"zack-{s['name']}", "description": s["description"], "version": version, "category": CATEGORY, "source": f"./skills/{s['category_path']}", "homepage": HOMEPAGE, "skills": ["./"], "strict": False})
     return {**CLAUDE_MARKETPLACE_TOP, "plugins": plugins}
 
 
 def build_codex_marketplace() -> dict:
-    return {"name": "harness", "interface": {"displayName": "Harness"}, "plugins": [{"name": "harness", "source": {"source": "local", "path": "./plugins/zack"}, "policy": {"installation": "AVAILABLE", "authentication": "ON_INSTALL"}, "category": CODEX_CATEGORY}]}
+    return {"name": "zack-skills", "interface": {"displayName": "Zack"}, "plugins": [{"name": "zack-skills", "source": {"source": "local", "path": "./plugins/zack"}, "policy": {"installation": "AVAILABLE", "authentication": "ON_INSTALL"}, "category": CODEX_CATEGORY}]}
 
 
 def build_package_json(version: str) -> str:
-    return json.dumps({"name": f"@{OWNER}/zack-skills", "version": version, "description": "Harness engineering skills for Claude Code.", "license": "MIT", "repository": {"type": "git", "url": f"git+https://github.com/{REPO}.git"}, "homepage": f"{HOMEPAGE}#readme", "keywords": ["claude-code", "skills", "harness"], "files": ["README.md", "skills", "rules", "scripts/check-update.sh", "!**/__pycache__/**"], "publishConfig": {"access": "public"}, "pi": {"skills": ["./skills", "!skills/RESOLVER.md"]}}, indent=2, ensure_ascii=False) + "\n"
+    return json.dumps({"name": "zack-skills", "version": version, "description": "Zack engineering skills for Claude Code.", "license": "MIT", "repository": {"type": "git", "url": f"git+https://github.com/{REPO}.git"}, "homepage": f"{HOMEPAGE}#readme", "keywords": ["claude-code", "skills", "zack"], "files": ["README.md", "skills", "rules", "scripts/check-update.sh", "!**/__pycache__/**"], "publishConfig": {"access": "public"}, "pi": {"skills": ["./skills", "!skills/RESOLVER.md"]}}, indent=2, ensure_ascii=False) + "\n"
 
 
 ROUTING_TABLE_START = "<!-- routing-table:start -->"

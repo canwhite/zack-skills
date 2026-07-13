@@ -1,7 +1,7 @@
 {
-  "name": "@canwhite/zack-skills",
+  "name": "zack-skills",
   "version": "1.9.0",
-  "description": "Harness engineering skills for Claude Code.",
+  "description": "Zack engineering skills for Claude Code.",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -11,7 +11,7 @@
   "keywords": [
     "claude-code",
     "skills",
-    "harness"
+    "zack"
   ],
   "files": [
     "README.md",
