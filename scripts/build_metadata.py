@@ -89,6 +89,45 @@ def render_dispatcher(template: str, skills: list[dict]) -> str:
     return pat.sub(block, template)
 
 
+def render_root_readme(skills: list[dict]) -> str:
+    """Generate root README.md from SKILL.md frontmatter so the skill list cannot drift."""
+    rows = ["| Skill | Description |", "|-------|-------------|"]
+    for s in sorted(skills, key=lambda x: x["name"]):
+        first_sentence = s["description"].split(". ")[0].rstrip(".")
+        rows.append(f"| `{s['name']}` | {first_sentence}. |")
+    table = "\n".join(rows)
+    return (
+        "# Zack Skills\n"
+        "\n"
+        "Engineering skills for Claude Code: code review, agent health audits, pre-mortem, post-mortem, diagnose, zoom-out, caveman compression, RICE prioritization, and markdown to mind map.\n"
+        "\n"
+        "## Skills\n"
+        "\n"
+        f"{table}\n"
+        "\n"
+        "## Install\n"
+        "\n"
+        "### Via skills-cli (recommended)\n"
+        "\n"
+        "```bash\n"
+        "npx skills add https://github.com/canwhite/zack-skills -g\n"
+        "```\n"
+        "\n"
+        "### Claude Code plugin\n"
+        "\n"
+        "```bash\n"
+        "/plugin marketplace add zack-skills\n"
+        "/plugin install zack-skills@zack-skills\n"
+        "```\n"
+        "\n"
+        "## Uninstall\n"
+        "\n"
+        "```bash\n"
+        "rm -rf ~/.claude/skills/zack-skills\n"
+        "```\n"
+    )
+
+
 def diff(label: str, expected: str, actual: str) -> str:
     return "".join(difflib.unified_diff(actual.splitlines(keepends=True), expected.splitlines(keepends=True), fromfile=f"committed:{label}", tofile=f"generated:{label}"))
 
@@ -152,11 +191,15 @@ def main() -> int:
     else:
         dispatcher_rendered = dispatcher_actual
 
+    readme_target = root / "README.md"
+    readme_rendered = render_root_readme(skills)
+
     if args.check:
         drift = False
         targets = [
             (root / ".claude-plugin" / "marketplace.json", json.dumps(marketplace, indent=2, ensure_ascii=False) + "\n"),
             (root / ".agents" / "plugins" / "marketplace.json", json.dumps(codex_mp, indent=2, ensure_ascii=False) + "\n"),
+            (readme_target, readme_rendered),
         ]
         for path, expected in targets:
             actual = path.read_text() if path.exists() else ""
@@ -201,6 +244,10 @@ def main() -> int:
     if dispatcher_template.exists() and dispatcher_rendered != dispatcher_actual:
         dispatcher_target.write_text(dispatcher_rendered)
         print(f"wrote: scripts/dispatcher.md")
+    readme_actual = readme_target.read_text() if readme_target.exists() else ""
+    if readme_rendered != readme_actual:
+        readme_target.write_text(readme_rendered)
+        print(f"wrote: README.md")
     return 0
 
 
