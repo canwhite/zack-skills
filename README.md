@@ -32,6 +32,20 @@ npx skills add https://github.com/canwhite/zack-skills -g
 /plugin install zack-skills@zack-skills
 ```
 
+### Via CLI (local clone)
+
+Clone the repo and run `cli.py` directly:
+
+```bash
+git clone https://github.com/canwhite/zack-skills.git
+cd zack-skills
+
+python3 cli.py list                  # List available skills
+python3 cli.py init                  # Initialize plugin.json with all skills
+python3 cli.py add <skill>           # Add a skill
+python3 cli.py remove <skill>        # Remove a skill
+```
+
 ## Uninstall
 
 ```bash
