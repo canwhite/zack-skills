@@ -10,7 +10,7 @@
     {
       "name": "zack-skills",
       "description": "Full Zack skill toolkit.",
-      "version": "1.9.0",
+      "version": "1.9.1",
       "category": "development",
       "source": "./",
       "homepage": "https://github.com/canwhite/zack-skills"
@@ -18,7 +18,7 @@
     {
       "name": "zack-caveman",
       "description": "Ultra-compressed communication mode. Cuts token usage ~75% by dropping filler, articles, and pleasantries while keeping full technical accuracy. Use when user says 'caveman mode', 'talk like caveman', 'use caveman', 'less tokens', 'be brief', or invokes /caveman.",
-      "version": "1.9.0",
+      "version": "1.9.1",
       "category": "development",
       "source": "./skills/productivity/caveman",
       "homepage": "https://github.com/canwhite/zack-skills",
@@ -30,7 +30,7 @@
     {
       "name": "zack-check",
       "description": "Reviews code diffs, PRs, commits, and project audits. Use when the user asks for code review, pre-merge checks, issue triage, or project quality scoring. Not for debugging runtime errors or planning new features.",
-      "version": "1.9.0",
+      "version": "1.9.1",
       "category": "development",
       "source": "./skills/engineering/check",
       "homepage": "https://github.com/canwhite/zack-skills",
@@ -42,7 +42,7 @@
     {
       "name": "zack-diagnose",
       "description": "Disciplined diagnosis loop for hard bugs and performance regressions. Reproduce → minimise → hypothesise → instrument → fix → regression-test. Use when user says \"diagnose this\" / \"debug this\", reports a bug, says something is broken/throwing/failing, or describes a performance regression.",
-      "version": "1.9.0",
+      "version": "1.9.1",
       "category": "development",
       "source": "./skills/engineering/diagnose",
       "homepage": "https://github.com/canwhite/zack-skills",
@@ -54,7 +54,7 @@
     {
       "name": "zack-health",
       "description": "Runs an engineering health audit for instruction drift, hooks, MCP tool drift, and AI maintainability. Use when the user asks to audit agent configuration, check CLAUDE.md drift, verify hooks, or assess project health.",
-      "version": "1.9.0",
+      "version": "1.9.1",
       "category": "development",
       "source": "./skills/engineering/health",
       "homepage": "https://github.com/canwhite/zack-skills",
@@ -66,7 +66,7 @@
     {
       "name": "zack-markdown-to-itmz",
       "description": "Generate an iThoughts (.itmz) mind map from any Markdown file. Use when user wants to convert markdown to itmz, create a mind map from documentation, or visualize markdown structure as a思维导图.",
-      "version": "1.9.0",
+      "version": "1.9.1",
       "category": "development",
       "source": "./skills/productivity/markdown-to-itmz",
       "homepage": "https://github.com/canwhite/zack-skills",
@@ -78,7 +78,7 @@
     {
       "name": "zack-post-mortem",
       "description": "Post-mortem analysis with diagnose capabilities. Reviews completed work, finds logic errors, implementation gaps, and potential bugs, then fixes them. Use when user invokes /post-mortem, asks to review completed features, wants to audit implemented code, or asks to find bugs in existing implementation.",
-      "version": "1.9.0",
+      "version": "1.9.1",
       "category": "development",
       "source": "./skills/engineering/post-mortem",
       "homepage": "https://github.com/canwhite/zack-skills",
@@ -90,7 +90,7 @@
     {
       "name": "zack-pre-mortem",
       "description": "Pre-mortem analysis that updates a plan markdown inline with all risks and mitigations. Use when user invokes /pre-mortem with a plan file, asks to anticipate risks on a plan, or wants failure modes analysis with automatic plan updates.",
-      "version": "1.9.0",
+      "version": "1.9.1",
       "category": "development",
       "source": "./skills/engineering/pre-mortem",
       "homepage": "https://github.com/canwhite/zack-skills",
@@ -102,7 +102,7 @@
     {
       "name": "zack-rice",
       "description": "RICE prioritization framework for scoring and ranking tasks. Use when user invokes /rice, asks to prioritize tasks, score features, or rank items by impact vs effort.",
-      "version": "1.9.0",
+      "version": "1.9.1",
       "category": "development",
       "source": "./skills/engineering/rice",
       "homepage": "https://github.com/canwhite/zack-skills",
@@ -114,7 +114,7 @@
     {
       "name": "zack-setup-zack-skills",
       "description": "Sets up an `## Agent skills` block in AGENTS.md/CLAUDE.md and `docs/agents/` so the engineering skills know this repo's issue tracker (GitHub or local markdown), triage label vocabulary, and domain doc layout. Run before first use of `to-issues`, `to-prd`, `triage`, `diagnose`, `tdd`, `improve-codebase-architecture`, or `zoom-out` — or if those skills appear to be missing context about the issue tracker, triage labels, or domain docs.",
-      "version": "1.9.0",
+      "version": "1.9.1",
       "category": "development",
       "source": "./skills/engineering/setup-zack-skills",
       "homepage": "https://github.com/canwhite/zack-skills",
@@ -126,7 +126,7 @@
     {
       "name": "zack-zoom-out",
       "description": "Tell the agent to zoom out and give broader context or a higher-level perspective. Use when you're unfamiliar with a section of code or need to understand how it fits into the bigger picture.",
-      "version": "1.9.0",
+      "version": "1.9.1",
       "category": "development",
       "source": "./skills/engineering/zoom-out",
       "homepage": "https://github.com/canwhite/zack-skills",
