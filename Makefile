@@ -13,7 +13,9 @@ regenerate:
 
 verify-scripts:
 	git diff --check
+	bash -n setup.sh
 	bash -n scripts/check-update.sh
+	bash -n scripts/link-skills.sh
 	python3 -m py_compile scripts/skill_frontmatter.py
 	python3 -m py_compile scripts/build_metadata.py
 	python3 -m py_compile scripts/verify_skills.py

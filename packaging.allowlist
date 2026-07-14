@@ -1,7 +1,9 @@
 VERSION
 README.md
 SKILL.md
+setup.sh
 .claude-plugin/marketplace.json
 skills/**
 rules/**
 scripts/check-update.sh
+scripts/link-skills.sh
