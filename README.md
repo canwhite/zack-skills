@@ -28,14 +28,32 @@ npx skills add https://github.com/canwhite/zack-skills -g
 ### Claude Code plugin
 
 ```bash
-/plugin marketplace add zack-skills
-/plugin install zack-skills@zack-skills
+/plugin marketplace add zack-skills             # tell Claude Code where to find the skill catalog (one-time)
+/plugin marketplace update zack-skills          # re-pull the catalog after pushing new commits
+/plugin install zack-<skill>                    # install per-skill, e.g. zack-caveman
 ```
+
+Available per-skill plugins: `zack-caveman`, `zack-diagnose`, `zack-improve-architecture`,
+`zack-markdown-to-itmz`, `zack-planning`, `zack-post-mortem`, `zack-pre-mortem`,
+`zack-rice`, `zack-setup-zack-skills`, `zack-zoom-out`.
+
+Pick only what you need. The marketplace also exposes an umbrella `zack-skills` that
+loads everything at once — prefer the per-skill installs above.
+
+> Have multiple marketplaces registered? Use `zack-<skill>@zack-skills` to disambiguate.
 
 ## Uninstall
 
+### Plugin (Claude Code)
+
 ```bash
-rm -rf ~/.claude/skills/zack-skills
+/plugin uninstall zack-<skill>                  # uninstall per-skill
+```
+
+### skills-cli (npm)
+
+```bash
+rm -rf ~/.claude/skills/zack-skills              # removes bundle + symlinks created by setup.sh
 ```
 
 ## CLI (managing your local copy)
