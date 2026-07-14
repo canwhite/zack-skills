@@ -3,6 +3,7 @@
   "skills": [
     "./skills/engineering/diagnose",
     "./skills/engineering/improve-architecture",
+    "./skills/engineering/planning",
     "./skills/engineering/post-mortem",
     "./skills/engineering/pre-mortem",
     "./skills/engineering/rice",

@@ -7,6 +7,7 @@ Engineering skills for Claude Code: pre-mortem, post-mortem, diagnose, zoom-out,
 | Skill | When | What it does |
 | :--- | :--- | :--- |
 | `pre-mortem` | Before starting | Anticipate failures and plan mitigations. |
+| `planning` | Starting a new task/feature | Clarify intent, then write a structured plan markdown to `docs/` following Plan / Think / Do / Adjust. |
 | `post-mortem` | After completing work | Review work, find logic errors and gaps. |
 | `diagnose` | When something is broken | Reproduce → minimise → hypothesise → instrument → fix → regression-test. |
 | `zoom-out` | Exploring codebase | Understand architecture, map modules and relationships. |

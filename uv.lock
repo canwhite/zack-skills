@@ -1,0 +1,8 @@
+version = 1
+revision = 3
+requires-python = ">=3.8"
+
+[[package]]
+name = "zack-skills-cli"
+version = "1.9.2"
+source = { editable = "." }

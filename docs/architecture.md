@@ -20,6 +20,7 @@
 | `engineering/` | `rice` | RICE 框架打分排序任务 |
 | `engineering/` | `zoom-out` | 探索代码库架构,绘制模块关系图 |
 | `engineering/` | `setup-zack-skills` | 首次仓库引导:把 issue tracker / triage label / 域文档布局写入 AGENTS.md |
+| `engineering/` | `planning` | 交互式规划:澄清需求 → 写 plan markdown 到 `docs/`,Plan/Think/Do/Adjust 四段式 |
 | `productivity/` | `caveman` | 极简通信模式,去除填充词保留技术精度 |
 | `productivity/` | `markdown-to-itmz` | Markdown → iThoughts 思维导图 (.itmz) |
 

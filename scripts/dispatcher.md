@@ -26,6 +26,7 @@
 |  | diagnose | `skills/engineering/diagnose/SKILL.md` |
 | Find refactor opportunities that turn shallow modules into deep ones; report candidates with files, problem, solution, benefits; ask user which to explore before proposing interfaces. | improve-architecture | `skills/engineering/improve-architecture/SKILL.md` |
 |  | markdown-to-itmz | `skills/productivity/markdown-to-itmz/SKILL.md` |
+| Interactive planning: clarify intent, write plan to docs/ following Plan/Think/Do/Adjust structure, then recommend pre-mortem | planning | `skills/engineering/planning/SKILL.md` |
 |  | post-mortem | `skills/engineering/post-mortem/SKILL.md` |
 |  | pre-mortem | `skills/engineering/pre-mortem/SKILL.md` |
 |  | rice | `skills/engineering/rice/SKILL.md` |

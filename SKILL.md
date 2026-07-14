@@ -1,8 +1,8 @@
 ---
 name: zack-skills
-description: "Engineering skill toolkit for Claude Code: pre/post-mortem, diagnose, zoom-out, caveman compression, RICE prioritization, mind map. Invoked as /zack-skills or by skill name."
-when_to_use: "diagnose, debug, explore architecture, caveman, rice, mind map, pre-mortem, post-mortem"
-dispatch_intent: "Code review, pre-mortem planning, post-mortem analysis, bug diagnosis, codebase exploration, compressed communication, task prioritization, markdown to mind map"
+description: "Engineering skill toolkit for Claude Code: planning, pre/post-mortem, diagnose, zoom-out, caveman compression, RICE prioritization, mind map. Invoked as /zack-skills or by skill name."
+when_to_use: "plan, planning, design, diagnose, debug, explore architecture, caveman, rice, mind map, pre-mortem, post-mortem"
+dispatch_intent: "Interactive planning, pre-mortem risk analysis, post-mortem analysis, bug diagnosis, codebase exploration, compressed communication, task prioritization, markdown to mind map"
 ---
 
 # Zack Skills
@@ -33,6 +33,13 @@ Generate iThoughts mind map (.itmz) from any Markdown file.
 
 - **Entry**: `skills/productivity/markdown-to-itmz/SKILL.md`
 - **Triggers**: markdown-to-itmz, mind map, itmz, 思维导图
+
+### /planning
+
+Interactive planning: clarify the request, then write a structured plan markdown to `docs/` following Plan / Think / Do / Adjust.
+
+- **Entry**: `skills/engineering/planning/SKILL.md`
+- **Triggers**: plan, planning, design, how to build, 怎么实现, 方案
 
 ### /post-mortem
 
@@ -80,6 +87,7 @@ First-time repo setup: wires issue tracker, triage labels, and domain doc layout
 | RICE prioritization | `skills/engineering/rice/SKILL.md` |
 | Codebase architecture exploration | `skills/engineering/zoom-out/SKILL.md` |
 | Markdown to mind map | `skills/productivity/markdown-to-itmz/SKILL.md` |
+| Plan / design / how to build | `skills/engineering/planning/SKILL.md` |
 | Bootstrap agent context (first run) | `skills/engineering/setup-zack-skills/SKILL.md` |
 
 ## Output Convention
