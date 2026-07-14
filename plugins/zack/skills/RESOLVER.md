@@ -17,7 +17,6 @@ All skills prefix the first line inline with `🥷`, not as its own paragraph.
 | Caveman / compressed communication / brief | `skills/productivity/caveman/SKILL.md` |
 | markdown-to-itmz / convert markdown to mind map | `skills/productivity/markdown-to-itmz/SKILL.md` |
 | rice / RICE prioritization / score tasks | `skills/engineering/rice/SKILL.md` |
-| Bootstrap / first-run / setup issue tracker and triage labels | `skills/engineering/setup-zack-skills/SKILL.md` |
 
 ## Disambiguation
 
@@ -28,7 +27,6 @@ All skills prefix the first line inline with `🥷`, not as its own paragraph.
 
 ## Chaining
 
-- `/setup-zack-skills` (once) → other skills gain repo context
 - `/planning` → writes plan to `docs/plan-<slug>.md` → `/pre-mortem <plan-file>` → ready to implement
 - `/pre-mortem` done → ready to implement
 

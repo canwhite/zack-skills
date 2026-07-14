@@ -69,13 +69,6 @@ Explore codebase architecture, map modules and relationships.
 - **Entry**: `skills/engineering/zoom-out/SKILL.md`
 - **Triggers**: zoom-out, architecture, explore, map modules
 
-### /setup-zack-skills
-
-First-time repo setup: wires issue tracker, triage labels, and domain doc layout into AGENTS.md/CLAUDE.md so other skills have context. Run once before /diagnose, /zoom-out, or any triage skill.
-
-- **Entry**: `skills/engineering/setup-zack-skills/SKILL.md`
-- **Triggers**: setup-zack-skills, bootstrap, first run, init
-
 ## Routing Table
 
 | Trigger | Skill |
@@ -88,7 +81,6 @@ First-time repo setup: wires issue tracker, triage labels, and domain doc layout
 | Codebase architecture exploration | `skills/engineering/zoom-out/SKILL.md` |
 | Markdown to mind map | `skills/productivity/markdown-to-itmz/SKILL.md` |
 | Plan / design / how to build | `skills/engineering/planning/SKILL.md` |
-| Bootstrap agent context (first run) | `skills/engineering/setup-zack-skills/SKILL.md` |
 
 ## Output Convention
 

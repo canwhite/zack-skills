@@ -14,7 +14,6 @@ A toolkit of engineering workflow skills for Claude Code: pre-mortem, post-morte
 | `post-mortem` | Post-mortem analysis with diagnose capabilities. |
 | `pre-mortem` | Pre-mortem analysis that updates a plan markdown inline with all risks and mitigations. |
 | `rice` | RICE prioritization framework for scoring and ranking tasks. |
-| `setup-zack-skills` | Sets up an `## Agent skills` block in AGENTS.md/CLAUDE.md and `docs/agents/` so the engineering skills know this repo's issue tracker (GitHub or local markdown), triage label vocabulary, and domain doc layout. |
 | `zoom-out` | Tell the agent to zoom out and give broader context or a higher-level perspective. |
 
 ## Install
@@ -35,7 +34,7 @@ npx skills add https://github.com/canwhite/zack-skills -g
 
 Available per-skill plugins: `zack-caveman`, `zack-diagnose`, `zack-improve-architecture`,
 `zack-markdown-to-itmz`, `zack-planning`, `zack-post-mortem`, `zack-pre-mortem`,
-`zack-rice`, `zack-setup-zack-skills`, `zack-zoom-out`.
+`zack-rice`, `zack-zoom-out`.
 
 Pick only what you need. The marketplace also exposes an umbrella `zack-skills` that
 loads everything at once — prefer the per-skill installs above.

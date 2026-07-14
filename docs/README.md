@@ -14,7 +14,6 @@ Engineering skills for Claude Code: pre-mortem, post-mortem, diagnose, zoom-out,
 | `caveman` | Any time | Ultra-compressed communication — drop filler, keep technical accuracy. |
 | `markdown-to-itmz` | Converting markdown | Generate iThoughts mind map from Markdown. |
 | `rice` | Ranking tasks | Score and rank tasks by RICE framework. |
-| `setup-zack-skills` | First-time repo setup | Wires issue tracker, triage labels, and domain docs into AGENTS.md/CLAUDE.md so other skills have repo context. Run once before `/diagnose`, `/zoom-out`, or any triage skill. |
 
 ## Install
 

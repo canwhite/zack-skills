@@ -15,7 +15,6 @@
 | caveman | Ultra-compressed communication mode |
 | markdown-to-itmz | Convert Markdown to iThoughts mind map |
 | rice | RICE prioritization for scoring and ranking tasks |
-| setup-zack-skills | First-time repo setup: wires issue tracker, triage labels, and domain docs into AGENTS.md |
 
 ## Routing Table
 
@@ -30,7 +29,6 @@
 |  | post-mortem | `skills/engineering/post-mortem/SKILL.md` |
 |  | pre-mortem | `skills/engineering/pre-mortem/SKILL.md` |
 |  | rice | `skills/engineering/rice/SKILL.md` |
-|  | setup-zack-skills | `skills/engineering/setup-zack-skills/SKILL.md` |
 |  | zoom-out | `skills/engineering/zoom-out/SKILL.md` |
 <!-- routing-table:end -->
 
