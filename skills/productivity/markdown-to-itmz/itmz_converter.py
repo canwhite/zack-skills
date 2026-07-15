@@ -402,8 +402,17 @@ def convert_md_to_itmz(md_path: str, output_path: str, title: str = None) -> Non
 def main():
     import sys
 
-    md_file = sys.argv[1] if len(sys.argv) > 1 else 'docs/langchain_core.md'
-    output_file = sys.argv[2] if len(sys.argv) > 2 else '~/Documents/ithoughtsx/langchain_core.itmz'
+    if len(sys.argv) < 2:
+        print("用法: python3 itmz_converter.py <input.md> [output.itmz]")
+        sys.exit(1)
+
+    md_file = sys.argv[1]
+    if len(sys.argv) > 2:
+        output_file = sys.argv[2]
+    else:
+        # 从 md 文件名派生输出路径
+        stem = Path(md_file).stem
+        output_file = f'~/Documents/ithoughtsx/{stem}.itmz'
 
     output_file = Path(output_file).expanduser()
 
