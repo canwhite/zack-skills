@@ -252,10 +252,17 @@ def generate_mapdata_xml(root: MindMapNode, title: str = "Mind Map") -> str:
             escaped_text = escape_text(child.text)
 
             # 计算位置
-            # depth=0/1 的节点全部在 y=0（水平排列），避免超出画布
-            if depth <= 1:
-                x = 150 if depth == 1 else 0
-                y = 0
+            # 兄弟节点需要分布在不同的 y 坐标，避免重叠
+            x = 150 if depth >= 1 else 0
+
+            if depth == 0:
+                # depth=0 的节点（根节点的直接子节点）水平排列，每个节点 y 不同
+                sibling_spacing = 100  # 更大的间距避免重叠
+                y = int((i - len(node.children) / 2) * sibling_spacing)
+            elif depth == 1:
+                # depth=1 的节点垂直分布在 x=150 的位置
+                sibling_offset = int((i - len(node.children) / 2) * Y_SCALE)
+                y = y_offset + sibling_offset
             else:
                 x = depth * x_base
                 sibling_offset = int((i - len(node.children) / 2) * Y_SCALE)
