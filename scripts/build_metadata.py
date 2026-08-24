@@ -145,6 +145,7 @@ def render_root_readme(skills: list[dict]) -> str:
         "```bash\n"
         "python3 cli.py add <name>     # install one skill to ~/.claude/skills/<name>\n"
         "python3 cli.py all            # install every skill that's missing\n"
+        "python3 cli.py remove <name>  # uninstall one skill (drops plugin.json entry + symlink)\n"
         "python3 cli.py refresh --sync-global --clear-cache   # after editing SKILL.md\n"
         "```\n"
         "\n"

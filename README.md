@@ -51,6 +51,7 @@ make verify-generated  # CI: fail if generated files drift from source
 ```bash
 python3 cli.py add <name>     # install one skill to ~/.claude/skills/<name>
 python3 cli.py all            # install every skill that's missing
+python3 cli.py remove <name>  # uninstall one skill (drops plugin.json entry + symlink)
 python3 cli.py refresh --sync-global --clear-cache   # after editing SKILL.md
 ```
 
