@@ -46,6 +46,16 @@ make regenerate        # rebuild all generated artifacts
 make verify-generated  # CI: fail if generated files drift from source
 ```
 
+### Add a single skill via local CLI
+
+```bash
+python3 cli.py add <name>     # install one skill to ~/.claude/skills/<name>
+python3 cli.py all            # install every skill that's missing
+python3 cli.py refresh --sync-global --clear-cache   # after editing SKILL.md
+```
+
+Works without uv — `uv run cli.py` is just sugar for the same script. For the full comparison of all 6 install paths, see [`docs/install-channels.md`](docs/install-channels.md).
+
 See [`docs/zoom-out.md`](docs/zoom-out.md) for the architecture reference (modules, dispatch flow, packaging model).
 
 ## License
