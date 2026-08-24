@@ -17,6 +17,7 @@ All skills prefix the first line inline with `🥷`, not as its own paragraph.
 | Caveman / compressed communication / brief | `skills/productivity/caveman/SKILL.md` |
 | markdown-to-itmz / convert markdown to mind map | `skills/productivity/markdown-to-itmz/SKILL.md` |
 | rice / RICE prioritization / score tasks | `skills/engineering/rice/SKILL.md` |
+| Pain decomposition / 痛点拆解 / 痛点识别 / decompose pain point | `skills/engineering/pain-decomposition/SKILL.md` |
 
 ## Disambiguation
 

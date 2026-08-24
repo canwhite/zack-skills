@@ -6,11 +6,15 @@ from __future__ import annotations
 import ast
 import sys
 from pathlib import Path
-from typing import NoReturn
+from typing import NoReturn, Optional
 
 CODEX_MIRROR_IGNORED_DIRS = {"__pycache__", ".mypy_cache", ".pytest_cache", ".ruff_cache"}
 CODEX_MIRROR_IGNORED_NAMES = {".DS_Store"}
 CODEX_MIRROR_IGNORED_SUFFIXES = {".pyc", ".pyo"}
+
+# Top-level frontmatter keys whose value is a YAML-style list of strings
+# (indented "- foo" lines). Currently used for decorative trigger lists.
+LIST_KEYS = {"triggers"}
 
 
 def should_include_codex_mirror_file(path: Path) -> bool:
@@ -54,19 +58,33 @@ def parse_frontmatter(path: Path) -> dict:
 
     fields: dict[str, str] = {}
     in_metadata = False
+    list_parent: Optional[str] = None
     for raw_line in lines[1:end]:
         if not raw_line.strip():
             continue
         if raw_line.startswith("  "):
-            if not in_metadata:
+            if in_metadata:
+                key, sep, raw_value = raw_line.strip().partition(":")
+                if not sep:
+                    fail(f"INVALID FRONTMATTER LINE: {path}: {raw_line!r}")
+                if key == "version":
+                    fields["version"] = parse_scalar("metadata.version", raw_value)
+                continue
+            if list_parent is None:
                 fail(f"INVALID FRONTMATTER INDENT: {path}: {raw_line!r}")
-            key, sep, raw_value = raw_line.strip().partition(":")
-            if not sep:
-                fail(f"INVALID FRONTMATTER LINE: {path}: {raw_line!r}")
-            if key == "version":
-                fields["version"] = parse_scalar("metadata.version", raw_value)
+            # list item under a LIST_KEYS parent — parse "- value" or "* value"
+            stripped = raw_line.strip()
+            value: Optional[str] = None
+            for prefix in ("- ", "* "):
+                if stripped.startswith(prefix):
+                    value = stripped[len(prefix):].strip()
+                    break
+            if value is None:
+                fail(f"INVALID FRONTMATTER LIST ITEM: {path}: {raw_line!r}")
+            fields.setdefault(list_parent, []).append(value)
             continue
         in_metadata = False
+        list_parent = None
         key, sep, raw_value = raw_line.partition(":")
         if not sep:
             fail(f"INVALID FRONTMATTER LINE: {raw_line!r}")
@@ -76,6 +94,9 @@ def parse_frontmatter(path: Path) -> dict:
             in_metadata = True
         elif key in {"name", "description", "when_to_use", "dispatch_intent"}:
             fields[key] = parse_scalar(key, raw_value)
+        elif key in LIST_KEYS:
+            list_parent = key
+        # else: unknown top-level key, silently ignored (future fields)
 
     name = fields.get("name")
     description = fields.get("description")
@@ -92,6 +113,7 @@ def parse_frontmatter(path: Path) -> dict:
         "description": description.strip(),
         "when_to_use": fields.get("when_to_use", "").strip(),
         "dispatch_intent": fields.get("dispatch_intent", "").strip(),
+        "triggers": fields.get("triggers", []),
     }
 
 

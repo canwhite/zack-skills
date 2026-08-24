@@ -5,7 +5,7 @@
     "name": "Zack",
     "email": "admin@example.com"
   },
-  "description": "Zack engineering skills for Claude Code: caveman, diagnose, improve-architecture, markdown-to-itmz, planning, post-mortem, pre-mortem, rice, zoom-out.",
+  "description": "Zack engineering skills for Claude Code: caveman, diagnose, improve-architecture, markdown-to-itmz, pain-decomposition, planning, post-mortem, pre-mortem, rice, zoom-out.",
   "plugins": [
     {
       "name": "zack-skills",
@@ -53,10 +53,22 @@
     },
     {
       "name": "zack-markdown-to-itmz",
-      "description": "Generate an iThoughts (.itmz) mind map from any Markdown file. Use when user wants to convert markdown to itmz, create a mind map from documentation, or visualize markdown structure as a思维导图.",
+      "description": "Generate an iThoughts (.itmz) mind map from any Markdown file. Uses LLM to validate and optimize heading hierarchy before conversion. Use when user wants to convert markdown to itmz, create a mind map from documentation, or visualize markdown structure as a思维导图.",
       "version": "1.9.3",
       "category": "development",
       "source": "./skills/productivity/markdown-to-itmz",
+      "homepage": "https://github.com/canwhite/zack-skills",
+      "skills": [
+        "./"
+      ],
+      "strict": false
+    },
+    {
+      "name": "zack-pain-decomposition",
+      "description": "Identify the core pain from a description, split it by parts of speech into nouns (Entity), verbs (Action), and adjectives/adverbs (Rules), then derive core metrics + data schema, business flow, and latent requirements, and finally roll these up into deliverable Features and an MVP launch path. Output document is written in Chinese to docs/painpoint-<slug>.md. Use when the user asks to decompose a pain point, analyze a pain point, identify pain points, 拆解痛点, 痛点分析, 痛点识别, 需求拆解.",
+      "version": "1.9.3",
+      "category": "development",
+      "source": "./skills/engineering/pain-decomposition",
       "homepage": "https://github.com/canwhite/zack-skills",
       "skills": [
         "./"

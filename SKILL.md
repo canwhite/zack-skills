@@ -1,8 +1,8 @@
 ---
 name: zack-skills
 description: "Engineering skill toolkit for Claude Code: planning, pre/post-mortem, diagnose, zoom-out, caveman compression, RICE prioritization, mind map. Invoked as /zack-skills or by skill name."
-when_to_use: "plan, planning, design, diagnose, debug, explore architecture, caveman, rice, mind map, pre-mortem, post-mortem"
-dispatch_intent: "Interactive planning, pre-mortem risk analysis, post-mortem analysis, bug diagnosis, codebase exploration, compressed communication, task prioritization, markdown to mind map"
+when_to_use: "plan, planning, design, diagnose, debug, explore architecture, caveman, rice, mind map, pre-mortem, post-mortem, pain-decomposition, 痛点拆解, 功能点, MVP 路径"
+dispatch_intent: "Interactive planning, pre-mortem risk analysis, post-mortem analysis, bug diagnosis, codebase exploration, compressed communication, task prioritization, markdown to mind map, pain point decomposition with feature + MVP launch path"
 ---
 
 # Zack Skills
@@ -40,6 +40,13 @@ Interactive planning: clarify the request, then write a structured plan markdown
 
 - **Entry**: `skills/engineering/planning/SKILL.md`
 - **Triggers**: plan, planning, design, how to build, 怎么实现, 方案
+
+### /pain-decomposition
+
+Pain point identification and decomposition: summarize core pain, split into noun/verb/adjective&adverb (entities/actions/rules), then derive metrics + data schema, business flow, latent requirements, and roll up into Features + MVP launch path. Output to `docs/painpoint-<slug>.md`.
+
+- **Entry**: `skills/engineering/pain-decomposition/SKILL.md`
+- **Triggers**: pain point, 痛点拆解, 痛点分解, 痛点识别, decompose pain, 分析痛点, MVP 路径, 功能点拆解
 
 ### /post-mortem
 
@@ -80,6 +87,7 @@ Explore codebase architecture, map modules and relationships.
 | RICE prioritization | `skills/engineering/rice/SKILL.md` |
 | Codebase architecture exploration | `skills/engineering/zoom-out/SKILL.md` |
 | Markdown to mind map | `skills/productivity/markdown-to-itmz/SKILL.md` |
+| Pain point decomposition / 痛点拆解 | `skills/engineering/pain-decomposition/SKILL.md` |
 | Plan / design / how to build | `skills/engineering/planning/SKILL.md` |
 
 ## Output Convention
