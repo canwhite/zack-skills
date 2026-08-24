@@ -30,6 +30,10 @@ npx skills add https://github.com/canwhite/zack-skills -g
 /plugin install zack-skills@zack-skills
 ```
 
+### All install channels
+
+For a full comparison of all 6 install paths (NPM, Marketplace, Codex, local CLI, manual copy, manual symlink), see [`install-channels.md`](install-channels.md).
+
 ## Uninstall
 
 ```bash
